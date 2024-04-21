@@ -60,7 +60,3 @@ target/
 *.DS_Store
 
 __pycache__ 
-
-img
-
-data
