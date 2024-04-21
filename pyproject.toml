@@ -1,0 +1,116 @@
+[tool.poetry]
+name = "credit-score-analytics-dashboard"
+version = "0.1.0"
+description = ""
+authors = ["olahsymbo <olahsymbo@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+dash = "^2.16.1"
+ruff = "^0.4.1"
+pandas = "^2.2.2"
+isort = "^5.13.2"
+flake8 = "^7.0.0"
+dash-bootstrap-components = "^1.6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+branch = "main"
+version_variable = "src/elasticsearch_logstash_kibana/__init__.py:__version__"
+version_source = "tag"
+commit_version_number = true # required for version_source = "tag"
+commit_message = "{version} [skip ci]" # skip triggering ci pipelines for version commits
+tag_commit = true
+upload_to_pypi = false
+upload_to_release = false
+hvcs = "github" # gitlab is also supported (hvcs = host version control system)
+changelog_file = "CHANGELOG.md"             # changelog file
+dist_path = "dist/"                         # where to put dists 
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = [
+    "build",
+    "chore",
+    "ci",
+    "docs",
+    "feat",
+    "fix",
+    "perf",
+    "style",
+    "refactor",
+    "test",
+]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]
+
+[tool.mypy]
+files = ['rdflib', 'test', 'devtools', 'examples']
+python_version = "3.8"
+warn_unused_configs = true
+ignore_missing_imports = true
+disallow_subclassing_any = false
+warn_unreachable = true
+warn_unused_ignores = true
+no_implicit_optional = false
+implicit_reexport = false
+
+[tool.isort]
+profile = "black"
+py_version = 37
+line_length = 88
+src_paths= ["rdflib", "test", "devtools", "examples"]
+supported_extensions = ["pyw", "pyi", "py"]
+skip = [
+    '.eggs',         # exclude a few common directories in the
+    '.git',          # root of the project
+    '.hg',
+    '.mypy_cache',
+    '.pytest_cache',
+    '.tox',
+    '.venv',
+    '.var',
+    '.github',
+    '_build',
+    'htmlcov',
+    'benchmarks',
+    'test_reports',
+    'rdflib.egg-info',
+    'buck-out',
+    'build',
+    'dist',
+    'venv',
+]
+
+[tool.black]
+line-length = "88"
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.pytest_cache
+    | \.tox
+    | \.venv
+    | \.var
+    | \.github
+    | _build
+    | htmlcov
+    | benchmarks
+    | test_reports
+    | rdflib.egg-info
+    | buck-out
+    | build
+    | dist
+    | venv
+  )/
+)
+'''
