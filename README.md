@@ -4,6 +4,10 @@
 
 The Credit Score Analytics Dashboard is a web application designed to provide insights and analysis related to credit scores. It offers visualizations and data summaries to help users understand and manage credit scores effectively. The application includes features such as credit score trends, comparison with benchmarks, risk assessment, and personalized recommendations.
 
+![WhatsApp Image 2024-04-21 at 07 34 22 (1) copy](https://github.com/hamilak/credit-score-analytics-dashboard/assets/69271526/40a8ae7c-b6ff-44ed-9def-b6f35e831a0d)
+![WhatsApp Image 2024-04-21 at 07 34 22 copy](https://github.com/hamilak/credit-score-analytics-dashboard/assets/69271526/3b906112-ec83-49ed-91fe-cf5955bf7bd8)
+
+
 ## Project Structure
 
 - `app.py`: Main Python script containing the Flask application and route definitions.
